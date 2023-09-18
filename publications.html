@@ -12,6 +12,7 @@
 		<!--JabRef-->
         <link href="./assets/css/jabref.css" rel="stylesheet" type="text/css">
         <script src="./assets/js/jabref.js"></script>
+		<link rel="stylesheet" href="/assets/academicons.min.css"/>
 		<!--call main.css after JabRef! -->
 		<link rel="stylesheet" href="assets/css/main.css" />        
 	</head>
@@ -41,12 +42,12 @@
 									</header>
 															
 							<form action="" id="quicksearch">
-							<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+							<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" class="small" />
 							<span id="searchstat">Matching entries: <span id="stat">0</span></span>
 							<div id="showsettings" onclick="toggleSettings()">settings...</div>
 							<div id="settings" class="hidden">
 							<ul>
-							<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
+							<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract in the search</label></li>
 							<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include comment</label></li>
 							<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
 							<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
@@ -523,7 +524,7 @@
 										<li>
 											<span class="opener">Selected topics</span>
 											<ul>
-												<li><a href="./index.html#blog">Biometric Cryptosystems</a></li>
+												<li><a href="./bio-crypto.html">Biometric Cryptosystems</a></li>
 												<li><a href="./index.html#blog">Ultrasound Beamforming</a></li>
 												<li><a href="./index.html#blog">4chan</a></li>
 												<li><a href="./index.html#blog">Minutiae Triple Correlation</a></li>
@@ -561,7 +562,7 @@
 							<!-- Footer -->
 								<footer id="footer">
 									<p class="copyright"> Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-									<small>Table created by <a href="http://jabref.sourceforge.net">JabRef</a> on 17/09/2023.</small>							
+									<p class="copyright"> Table created by <a href="http://jabref.sourceforge.net">JabRef</a> on 17/09/2023.</p>							
 								</footer>
 
 						</div>

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Gabriel Emile Hine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/academicons.min.css"/>
+		<link rel="stylesheet" href="assets/css/main.css" />	
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Gabriel Emile Hine</strong>, Ph.D</a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/gabriel-emile-hine/" class="icon brands fa-linkedin-in"><span class="label">Linked-in</span></a></li>
+										<li><a href="https://scholar.google.com/citations?user=mBLQRTwAAAAJ" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
+										<li><a href="https://www.researchgate.net/profile/Gabriel-Hine" class="icon brands fa-researchgate"><span class="label">Research Gate</span></a></li>
+									</ul>
+								</header>
+								<section>
+								<h4>Unlinkable Zero-leakage Biometric Cryposystems</h4>
+								<p align="justify"><span class="image left"><img src="images/unlinkability-full-system.gif" alt="" /></span>
+								This is the project I am most attached to. It is the main topic of my Ph.D. thesis, <a href="publications.html#hine2019">"Anonymous Biometrics"</a>, 
+								which was awarded the EAB Best Biometric Research 2020. The first part of the project started in 2014 with my Master's Thesis, work that was then refined and eventually published in 2017 as <a href="publications.html#hine2017zero">"A zero-leakage fuzzy embedder"</a> in TIFS. Unfortunately, the  second part of the work took a long time to get 
+								published. Although most of it was ready, the process was put on hold due to my departure from academia to the industry. With a bit of struggle, the second part came out in 2023 as <a href="publications.html#hine2023unlinkable">"Unlinkable Zero-Leakage Biometric Cryptosystem"</a>, again in TIFS.</p>
+								<figure>
+								<span class="image right"> 								
+								  <embed id="pdf-embed" src="./docs/2020_eab_award.pdf" type="application/pdf" /> 
+								  <figcaption><ul class="actions">
+									<li><a href="./eab-presentation.html" class="button small primary">See slides</a></li>
+								</ul>
+								</span>
+								</figure>
+								<p align="justify">
+								Sincerely, the reception of the work by the community hasn't been the best ever. At least, it is not proportional to the time and effort spent on it. Conrvesally, my most cited publication is the outcome of a three-month project and one cross-correlation.<br>
+								I get it; the topic is niche, and the papers are full of equations, making them hard to read. Perhaps these few notes can lighten the story line. </p>
+							    <h5>Biometric Cryposystems</h4>
+								<p align="justify">Nowadays, we are all quite used to the use of biometrics. We use our fingerprints to unlock our smartphones; we use automated border control (ABC) systems that check out faces against the photo on our passports.
+								That's all fine: our fingerprint is stored and securely locked in the smartphone; your face would be on your passport regardless, and the ABC is just substituting a frustrated worker and making the queue shorter.
+								The problem comes when you want to use biometrics to get authenticated by a service provider, let's say your bank, or a bitcoin provider (see <a href="https://worldcoin.org/blog">WordCoin</a>, for instance).
+								In this case, there is a set of regulations the service provider must conform with. For example, in Europe, the General Data Protection Regulation (GDPR). According to GDPR, biometrics data fall into a broader class
+                                of sensitive and personal data. For such data, processing, storage, and transmission have many restrictions. One of the main concepts is the minimisation of data collection: the level of sensitivity of the data that a user can be asked to donate should be proportional to the service itself. For example, one cannot ask for a DNA sample to open a social media account. 
+								In addition, GDPR enforces that data protection should be implemented <i>by design and by default.</i> Note that, in contrast with the average understanding, storing a template instead of the raw biometric sample is insufficient, according to GDPR. The template, being by construction intimately connected to the user, must be considered sensitive as well.</br>
+								One may say, just encrypt everything! Not quite that easy. Biometrics are noisy signals, and the comparison should be performed in plaintext (at least if we restrict it to conventional techniques).
+								For example, one can't just hash the biometric template as you would do with a password.<br>
+								The solutions to the problem can be categorised into three classes, namely: <em>Cancellable biometrics;  Secure computation (Homomorphic Encryption); Biometric Cryptosystems.</em><BR>
+								Cancellable biometrics consist of a key-dependent, non-invertible transformation of the biometric template. The main weakness of these techniques is the lack of a proper security analysis framework.<br>
+								In the secure computation paradigm, the biometric comparison is performed in the encrypted domain. This is possible thanks to techniques like <em>Homomorphic Encryption</em>. The main advantage of this paradigm is the well-understood security analysis. The main disadvantage is that the implementation can be pretty slow. Secure computation is, in fact implemented employing multi-party computation where the communication overhead can be the bottleneck. 
+								There are few start-ups out there promoting the deployment of such protocols in the real world (for example,  <a href="https://keyless.io/">Keyless</a>).<br>
+								Biometric cryptosystems are a set of techniques that are specifically designed to deal with noisy data. Very similar techniques can be found in fields such as <em>Physical Layer Security</em> or <em>Physically Unclonable Functions</em>.
+								These techniques provide Information Theoretic security. The framework is extremely elegant, but its intrinsic disadvantages make the deployment to the real world quite challenging.
+								As we will see, these techniques mandate the security of the system to the entropy of the underlying biometric signal, potentially without the need for a secondary security factor. And this is the beauty and the doom of this framework. Even if we do everything right, we design a low noise acquisition system and learn the most reliable biometric representation; each biometric trait has its own entropy upper boundary. Even if we could find a biometric representation able to provide an effective 256-bit security, thus complying with current NIST security recommendations, if tomorrow the standard goes to 512, we can't just scale the biometric signal. 
+								Hence, besides the extreme elegance of the provable secure cryptosystems based on the biometric single factor, the lack of scalability makes it impractical. <br>
+								What I am saying here seems contradictory to my thesis, but it is not. The main goal of my project was to develop techniques that did not use any secret key, and I instead squeezed everything I could take from the biometric signal itself. On top of that, you may add standard cryptographic techniques.
+								A secure system is a complex infrastructure. My biometric cryptosystem is just a small brick that could be used to build a much taller building. 
+								
+								</p>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+							<!---	<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+							-->	
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="./index.html#short-bio">About me</a></li>
+										<li>
+											<span class="opener">Selected topics</span>
+											<ul>
+												<li><a href="./bio-crypto.html">Biometric Cryptosystems</a></li>
+												<li><a href="./index.html#blog">Ultrasound Beamforming</a></li>
+												<li><a href="./index.html#blog">4chan</a></li>
+												<li><a href="./index.html#blog">Minutiae Triple Correlation</a></li>
+											</ul>
+										</li>
+										<li><a href="./publications.html">Publications</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Business Card</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="./v-card.html" class="image"><img style="pointer-events: none" src="images/v-card.jpg" alt="" /></a>
+											<p>.</p>
+										</article>
+									</div>									
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Choose the propoer address, depending on the topic</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope">g*****l.hine@fingerprints.com<br/><i>industry</i></li>
+									    <li class="icon solid fa-envelope">g*****l.hine@uniroma3.it<br/><i>resaerch</i></li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright"> Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/myfunctions.js"></script>
+
+	</body>
+</html>
