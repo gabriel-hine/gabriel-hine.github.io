@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Gabriel Emile Hine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/academicons.min.css"/>
+		<link rel="stylesheet" href="assets/css/main.css" />	
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  }
+			};
+			</script>
+			<script id="MathJax-script" async
+			  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+		</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Gabriel Emile Hine</strong>, Ph.D</a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/gabriel-emile-hine/" class="icon brands fa-linkedin-in"><span class="label">Linked-in</span></a></li>
+										<li><a href="https://scholar.google.com/citations?user=mBLQRTwAAAAJ" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
+										<li><a href="https://www.researchgate.net/profile/Gabriel-Hine" class="icon brands fa-researchgate"><span class="label">Research Gate</span></a></li>
+									</ul>
+								</header>
+								<section>
+								
+								<div class="posts">
+									<article>
+											<h3>Real Time DMAS Beamforming</h3> 
+											<p align="justify">	
+											Oversimplifying, my contribution to this work was an algebraic rearrangement. False modesty aside, such rearrangement let the real-time implementation of the Delay Multilply ans Sum (DMAS) possible.
+											The intuition came while I was a student and I was attending the course of "Sensors and Trasnducers". As a project for the class, I was implementing the classic Delay-and-Sum (DAS) beamforing algorithm on a Nvidia Jetson TK1 board. 
+											During a seminar to the class, the teachers mentioned their novel idea <a href="https://iris.unipv.it/bitstream/11571/1102681/6/TMI2371235.pdf">DMAS</a> algorithm for ultrasound medical imaging. Apparantly, the algorithm gave better contrast and resolution, but it's real-time implementation was limited by its complexity.
+											Intrigued by it, and to please my professors during the final exam, I started wondeering how I could integrate this new algorithm to my DAS GPU implementation. 
+											</p>
+										
+										<p align="justify">
+									</article>
+
+									<article>
+										<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mBLQRTwAAAAJ&citation_for_view=mBLQRTwAAAAJ:blknAaTinKkC" class="image" style="margin:0; padding:0;  display:inline-block;"><img style ="    width:100%;"src="images/DMAS.gif" alt="" /></a>										
+										<ul class="actions">
+											<li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mBLQRTwAAAAJ&citation_for_view=mBLQRTwAAAAJ:blknAaTinKkC" class="button small">Read on IEEE</a></li>
+										</ul>
+									</article>
+									
+								</div>
+								</section>
+								
+								<section>
+								
+							    <h4>Simplifying DMAS</h4>
+								<p align="justify">
+								
+								<figure>
+								<span class="image right"> 								
+								  <img src="images/das.png" alt="" />
+								  <figcaption>
+								</span>
+								</figure>
+								</p>
+								<p align="justify">															
+								The DAS algorithm is <a href="https://en.wikipedia.org/wiki/Embarrassingly_parallel">embarrassingly parallel</a>. In fact, the signals from N  channels are independently delayed, and a reduction sum is then applied. 
+								We can't say the same for DMAS. DMAS adds an all-vs-all multiplication (a tensor product) stage before applying the reduction sum. The tensor product stage (excluding self-multiplications) 
+								consists in $\frac{N^2-N}{2}$ multiplications, making the algorithm quadratic with the number of channels. That was the bottleneck.
+								Moreover, the flow chart became much more complex to be parallelized... Then, the eureka moment: where did I hear " the sum of all products of each term with each other"? Of course, polynomial multiplication.
+								</p>
+								
+								<p align="justify">						
+								<figure>
+								<span class="image left"> 								
+								  <img src="images/DMAS-BP.gif" alt="" />
+								  <figcaption>
+								</span>
+								</figure>
+								</p>
+								<p align="justify">															
+								For example, given three signals $a$, $b$, and $c$ the sum of all multiplications is  $a \cdot b + a \cdot c + b \cdot c  = \frac{1}{2}[( a + b + c)^2 - (a^2 + b^2 +c^2) ]$. (The example is a bit deceiving; try to use all the a-z letters.)								
+								Hence, instead of a sum reduction of $\frac{N^2-N}{2}$ products, the algorithm reduces to performing two sum reductions of N elements each. Moreover, it is again embarrassingly parallel since, apart from final the reductions, there is no interaction between channels.							
+								</p>
+								
+								<p align="justify">						
+								<figure>
+								<span class="image right"> 								
+								  <img src="images/dmas-flow.jpg" alt="" />
+								  <figcaption>
+								</span>
+								</figure>
+								</p>
+								<p align="justify">															
+								I brought the intuition to my professors during the exam. I got the maximum mark and a paper a few years later. They in fact used the idea to propose a <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mBLQRTwAAAAJ&citation_for_view=mBLQRTwAAAAJ:blknAaTinKkC">real time FPGA/DSP implementation</a>
+								</p>
+								
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+							<!---	<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+							-->	
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="./index.html#short-bio">About me</a></li>
+										<li>
+											<span class="opener">Selected topics</span>
+											<ul>
+												<li><a href="./bio-crypto.html">Biometric Cryptosystems</a></li>
+												<li><a href="./dmas.html">Ultrasound Beamforming</a></li>
+												<li><a href="./index.html#blog">4chan</a></li>
+												<li><a href="./index.html#blog">Minutiae Triple Correlation</a></li>
+											</ul>
+										</li>
+										<li><a href="./publications.html">Publications</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Business Card</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="./v-card.html" class="image"><img style="pointer-events: none" src="images/v-card.jpg" alt="" /></a>
+											<p>.</p>
+										</article>
+									</div>									
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Choose the propoer address, depending on the topic</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope">g*****l.hine@fingerprints.com<br/><i>industry</i></li>
+									    <li class="icon solid fa-envelope">g*****l.hine@uniroma3.it<br/><i>resaerch</i></li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright"> Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/myfunctions.js"></script>
+
+	</body>
+</html>
