@@ -35,7 +35,7 @@ tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font
 tr.abstract td, tr.comment td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
 tr.nextshow td { border-bottom: 1px gray solid; }
 
-tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-line;}
 p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 
 @media print {
