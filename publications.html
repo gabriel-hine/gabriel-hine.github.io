@@ -15,6 +15,17 @@
 		<link rel="stylesheet" href="/assets/academicons.min.css"/>
 		<!--call main.css after JabRef! -->
 		<link rel="stylesheet" href="assets/css/main.css" />        
+		<script>
+		window.onload = function() {
+			$("#qs_table td").each(function(){
+				if (typeof (this.firstChild.data) !== 'undefined') {					
+					(this.firstChild.data) = (this.firstChild.data).replace('Hine', function($1){
+						return "<span style='font-weight: bold; '>" + $1 + "</span>"});										
+					$(this.firstChild).replaceWith((this.firstChild.data));
+				}
+			});
+		}
+		</script>
 	</head>
 	<body class="is-preload">
 
