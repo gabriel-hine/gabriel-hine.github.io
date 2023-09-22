@@ -80,6 +80,19 @@
 								Cancellable biometrics consist of a key-dependent, non-invertible transformation of the biometric template. The main weakness of these techniques is the lack of a proper security analysis framework.<br>
 								In the secure computation paradigm, the biometric comparison is performed in the encrypted domain. This is possible thanks to techniques like <em>Homomorphic Encryption</em>. The main advantage of this paradigm is the well-understood security analysis. The main disadvantage is that the implementation can be pretty slow. Secure computation is, in fact, implemented employing multi-party computation where the communication overhead can be the bottleneck. 
 								There are few start-ups out there promoting the deployment of such protocols in the real world (for example,  <a href="https://keyless.io/">Keyless</a>).<br>
+								</p>
+								<p align="justify">
+								
+								<figure>
+								<span class="image left"> 								
+								  <img src="images/ijcb-poster.jpg" alt="" />
+								  <figcaption><ul class="actions">
+									<li><a href="./ijcb-poster.html" class="button small primary">See poster</a></li>
+								</ul>
+								</span>
+								</figure>
+								</p>								
+								<p align="justify">															
 								Biometric cryptosystems are a set of techniques that are specifically designed to deal with noisy data. Very similar techniques can be found in fields such as <em>Physical Layer Security</em> or <em>Physically Unclonable Functions</em>.
 								These techniques provide Information Theoretic security. The framework is extremely elegant, but its intrinsic disadvantages make the deployment to the real world quite challenging.
 								As we will see, these techniques mandate the security of the system to the entropy of the underlying biometric signal, potentially without the need for a secondary security factor. And this is the beauty and the doom of this framework. Even if we do everything right, we design a low noise acquisition system and learn the most reliable biometric representation, each biometric trait has its own entropy upper boundary. Even if we could find a biometric representation able to provide an effective 256-bit security, thus complying with current NIST security recommendations, if tomorrow the standard goes to 512, we can't just scale the biometric signal. 
