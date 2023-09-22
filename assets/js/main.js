@@ -22,6 +22,11 @@
 			'small-to-xlarge':  '(min-width: 481px) and (max-width: 1680px)'
 		});
 
+	// rmv right click save img
+	$("body").on("contextmenu", "img", function(e) {
+	  return false;
+	});
+
 	// Stops animations/transitions until the page has ...
 
 		// ... loaded.
