@@ -48,13 +48,17 @@
 											<p></p>
 										
 										<p align="justify">															
-											Due to NDA, I can't discuss my projects at Fingerprint Cards in detail. I can mention that two of the highlights have been:
+											Due to NDA, I can't discuss my activities within iris at Fingerprint Cards. I can mention that two of the highlights have been:
 											<ul>
 											<li>a hardware-based Iris/Face Liveness detector (4 patents pending);</li>
 											<li>lowering our resolution/signal-to-noise algo requirements to perform Iris Recognition through a Driver Monitoring System hardware.</li>
 											</ul>
 											You may find further information here: <a href="https://www.fingerprints.com/technology/software/iris/" >fingerprints.com/technology/software/iris/</a>.
 										</p>
+										<p align="justify">															
+											As from October 2023, I'm part of the <b>NIST Iris Experts Group</b>. 
+										</p>										
+										
 									</article>
 
 									<article>
@@ -65,6 +69,45 @@
 									</article>
 									
 								</div>
+								</section>
+								
+								<section>
+								
+								<p align="justify">		
+								The iris is one of the most fascinating biometric traits. Eyes have always had an important symbolism in arts, religion, and spirituality: "The eyes are the window to the soul". 
+								Iris comes from ancient Greek Ἶρις, meaning both rainbow and halo of the Moon. In mythology, Iris was the personification of the rainbow and messenger of the gods. <br>
+								</p>
+								<p align="justify">									
+								<figure>
+								<span class="image left"> 								
+								 <a class="image" href="./images/iris-code_effect_brightness.gif" ><img src="images/iris-code_effect_brightness.gif" alt="" /></a>
+								  <figcaption align="justify"><i>Demonstrating the impact of illumination on the robustness of iris codes using Root Mean Square Error (RMSE) between images (blue line) vs Hamming Distance (HD) between corresponding iris codes (green line). Credit: worldcoin.org</i> </figcaption>
+								</span>
+								</figure>
+								</p>
+								
+								
+								
+								<h4>The Iris-code</h4>
+								<p align="justify">									
+								The foundational algorithm for iris recognition was developed by Dr. John Daugman in the 1990s. After more than 30 years, the Daugman's iris-code is still the standard de-facto for iris recognition (at least for high-resolution images).
+								The iris-code is a binary template encoding the salient features of the iris. Specifically, it encodes the phase of the responses of the iris to a bank of band-pass filters. The binary representation makes the matching as simple as a Hamming Distance, making a 1-to-many comparison extremely lightweight. Before encoding, the iris texture is sampled in a pseudo-polar manner, exploiting the natural circularity of the iris. The prefix "pseudo-" is there since the texture is sampled starting from the pupil to the iris boundary. In this way, the pupil dilation/constriction and the subsequent iris elastic response are absorbed. Furthermore, the pupil and limbus (the iris to sclera boundary) are typically non-concentric, making the pseudo-polar sampling even more pseudo.<br>
+								Without going into further details, Daugman's virtue  was to be able to encode straightforwardly and elegantly the vast entropy and diversity of the iris texture. 
+								If we discard DNA, the iris is virtually the only biometric trait you can use to uniquely distinguish people at the scale of millions or billions. Not by chance, it has been chosen in projects as <a href="https://en.wikipedia.org/wiki/Aadhaar">Aadhaar</a> or, more recently, by WorldCoin.								
+								</p>
+								<h4>The Afghan Girl	</h4> 											
+								<p align="justify">									
+								<figure>
+								<span class="image right"> 								
+								 <a class="image" href="./images/26xp-afghangirl-jumbo.webp" ><img src="images/26xp-afghangirl-jumbo.webp" alt="" /></a>
+								  <figcaption align="justify"><i>Sharbat Gula, left, on the cover of National Geographic in 1985, and then nearly two decades later, after she was reunited with the photographer.Credit: Steve McCurry/National Geographic Society</i> </figcaption>
+								</span>
+								</figure>
+								</p>
+								<p align="justify">				
+								In 1984, National Geographic photographer Steve McCurry took an iconic photograph of an Afghan girl with haunting green eyes in a refugee camp in Pakistan. The image became one of the most famous covers of National Geographic Magazine.
+								Years later, in 2002, National Geographic decided to locate the girl from the photograph. With few clues, the team faced a daunting task in a region with millions of Pashtun tribespeople. Thanks to the beautiful details of the eyes in the photograph, they eventually successfully located her, identified as Sharbat Gula. Iris recognition technology proved that the woman found was the same girl from McCurry's 1984 photograph, showcasing the power and accuracy of such a biometric trait. This demonstrates another key feature: iris do not age. 
+								</p>							
 								</section>
 																
 						</div>
@@ -88,7 +131,7 @@
 									</header>
 									<ul>
 										<li><a href="index.html">Homepage</a></li>
-										<li><a href="./index.html#short-bio">About me</a></li><li><a href="./things-I-know.html">Things I know</a></li>
+										<li><a href="./index.html#short-bio">About me</a></li><li><a href="./things-I-know.html">Things I know</a></li> <li><a href="./cv.html">Resume</a></li>
 										<li>
 											<span class="opener">Blog</span>
 											<ul>
