@@ -47,21 +47,18 @@
 									  <h3>Iris Recognition</h3>
 
 									  <p align="justify">
-										Due to a non-disclosure agreement (NDA), I can't go into detail about my work related to iris technology at Fingerprint Cards. However, I can share a couple of key achievements:
+										Due to non-disclosure agreements (NDA), I can't go into detail about my work related to iris technology at Smart Eye and Fingerprint Cards. However, I can share a couple of key achievements:
 									  </p>
 
 									  <ul>
+										<li>Designed and implemented a multimodal biometric fusion framework (Iris + Face);</li>
+										<li>API architecture design aligned with industry standards (FIDO, NIST);</li>
 										<li>Developing a hardware-based Iris/Face Liveness detector (4 patents pending);</li>
 										<li>Dropping the resolution requirements of our engine to 3px/mm at the iris level, which is roughly just a 36-pixel diameter!</li>
 									  </ul>
 
 									  <p align="justify">
-										For more information, you can explore further details here: 
-										<a href="https://www.fingerprints.com/technology/software/iris/">fingerprints.com/technology/software/iris/</a>.
-									  </p>
-
-									  <p align="justify">
-										As of October 2023, I'm part of the <b>NIST Iris Experts Group</b>.
+										I'm a member of the <b>NIST Iris Experts Group</b>.
 									  </p>
 									</article>
 
@@ -71,9 +68,6 @@
 										<img src="images/iris.jpeg" alt="Iris Recognition Image" style="width: 100%;" />
 									  </a>
 									  <ul class="actions" style="margin-top: 10px; text-align: center;">
-										<li>
-										  <a href="https://www.fingerprints.com/technology/software/iris" class="button small">fingerprints.com</a>
-										</li>
 									  </ul>
 									</article>
 								  </div>
@@ -99,10 +93,10 @@
 								
 								<h4>The Iris-code</h4>
 								<p align="justify">									
-								The foundational algorithm for iris recognition was developed by Dr. John Daugman in the 1990s. After more than 30 years, the Daugman's iris-code is still the standard de-facto for iris recognition (at least for high-resolution images).
+								The foundational algorithm for iris recognition was developed by Dr. John Daugman in the 1990s. After more than 30 years, the Daugman's iris-code is still the de facto standard for iris recognition (at least for high-resolution images).
 								The iris-code is a binary template encoding the salient features of the iris. Specifically, it encodes the phase of the responses of the iris to a bank of band-pass filters. The binary representation makes the matching as simple as a Hamming Distance, making a 1-to-many comparison extremely lightweight. Before encoding, the iris texture is sampled in a pseudo-polar manner, exploiting the natural circularity of the iris. The prefix "pseudo-" is there since the texture is sampled starting from the pupil to the iris boundary. In this way, the pupil dilation/constriction and the subsequent iris elastic response are absorbed. Furthermore, the pupil and limbus (the iris to sclera boundary) are typically non-concentric, making the pseudo-polar sampling even more pseudo.<br>
-								Without going into further details, Daugman's virtue  was to be able to encode straightforwardly and elegantly the vast entropy and diversity of the iris texture. 
-								If we discard DNA, the iris is virtually the only biometric trait you can use to uniquely distinguish people at the scale of millions or billions. Not by chance, it has been chosen in projects as <a href="https://en.wikipedia.org/wiki/Aadhaar">Aadhaar</a> or, more recently, by WorldCoin.								
+								Without going into further details, Daugman's virtue was to be able to elegantly and efficiently encode the vast entropy and diversity of the iris texture. 
+								If we discard DNA, the iris is virtually the only biometric trait you can use to uniquely distinguish people at the scale of millions or billions. Not by chance, it has been chosen in projects such as <a href="https://en.wikipedia.org/wiki/Aadhaar">Aadhaar</a> or, more recently, by WorldCoin.								
 								</p>
 								<h4>The Afghan Girl	</h4> 											
 								<p align="justify">									
@@ -115,7 +109,7 @@
 								</p>
 								<p align="justify">				
 								In 1984, National Geographic photographer Steve McCurry took an iconic photograph of an Afghan girl with haunting green eyes in a refugee camp in Pakistan. The image became one of the most famous covers of National Geographic Magazine.
-								Years later, in 2002, National Geographic decided to locate the girl from the photograph. With few clues, the team faced a daunting task in a region with millions of Pashtun tribespeople. Thanks to the beautiful details of the eyes in the photograph, they eventually successfully located her, identified as Sharbat Gula. Iris recognition technology proved that the woman found was the same girl from McCurry's 1984 photograph, showcasing the power and accuracy of such a biometric trait. This demonstrates another key feature: iris do not age. 
+								Years later, in 2002, National Geographic decided to locate the girl from the photograph. With few clues, the team faced a daunting task in a region with millions of Pashtun tribespeople. Thanks to the beautiful details of the eyes in the photograph, they eventually successfully located her, identified as Sharbat Gula. Iris recognition technology proved that the woman found was the same girl from McCurry's 1984 photograph, showcasing the power and accuracy of such a biometric trait. This demonstrates another key feature: irises do not age. 
 								</p>							
 								</section>
 																

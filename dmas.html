@@ -97,7 +97,7 @@
 								The DAS algorithm is <a href="https://en.wikipedia.org/wiki/Embarrassingly_parallel">embarrassingly parallel</a>. In fact, the signals from N  channels are independently delayed, and a reduction sum is then applied. 
 								We can't say the same for DMAS. DMAS adds an all-vs-all multiplication (a tensor product) stage before applying the reduction sum. The tensor product stage (excluding self-multiplications) 
 								consists in $\frac{N^2-N}{2}$ multiplications, making the algorithm quadratic with the number of channels. That was the bottleneck.
-								Moreover, the flow chart became much more complex to be parallelized... Then, the eureka moment: where did I hear " the sum of all products of each term with each other"? Of course, polynomial multiplication.
+								Moreover, the flow chart became much more complex to parallelize... Then, the eureka moment: where did I hear " the sum of all products of each term with each other"? Of course, polynomial multiplication.
 								</p>
 								
 								<p align="justify">						
@@ -109,7 +109,7 @@
 								</figure>
 								</p>
 								<p align="justify">															
-								For example, given three signals $a$, $b$, and $c$ the sum of all multiplications is  $a \cdot b + a \cdot c + b \cdot c  = \frac{1}{2}[( a + b + c)^2 - (a^2 + b^2 +c^2) ]$. (The example is a bit deceiving; try to use all the a-z letters.)								
+								For example, given three signals $a$, $b$, and $c$ the sum of all multiplications is  $a \cdot b + a \cdot c + b \cdot c  = \frac{1}{2}[( a + b + c)^2 - (a^2 + b^2 +c^2) ]$. (The example is a bit misleading; try to use all the a-z letters.)								
 								Hence, instead of a sum reduction of $\frac{N^2-N}{2}$ products, the algorithm reduces to performing two sum reductions of N elements each. Moreover, it is again embarrassingly parallel since there is no interaction between channels apart from the two final reductions.							
 								</p>
 								
