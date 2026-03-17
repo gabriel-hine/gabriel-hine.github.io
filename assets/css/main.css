@@ -2293,3 +2293,33 @@ button,
     text-align: center;
     width: 3em!important;
 }
+
+/* Blog header layout */
+.blog-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.blog-header .blog-header-text {
+  flex: 1;
+  padding-right: 20px;
+}
+.blog-header .blog-header-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 736px) {
+  .blog-header {
+    flex-direction: column-reverse;
+  }
+  .blog-header .blog-header-text {
+    padding-right: 0;
+  }
+  .blog-header .blog-header-image {
+    max-width: 60%;
+    align-self: center;
+  }
+}
