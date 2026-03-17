@@ -2346,6 +2346,25 @@ button,
   }
 }
 
+/* CV mobile: hide logo column, show inline logo */
+.cv-inline-logo {
+  display: none;
+  vertical-align: middle;
+  height: 2em;
+  margin-right: 0.3em;
+}
+@media screen and (max-width: 736px) {
+  .cv-logo-col {
+    display: none;
+  }
+  .cv-content-col {
+    width: 100% !important;
+  }
+  .cv-inline-logo {
+    display: inline;
+  }
+}
+
 /* Blog header layout */
 .blog-header {
   display: flex;
