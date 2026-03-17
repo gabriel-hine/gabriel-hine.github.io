@@ -2294,6 +2294,49 @@ button,
     width: 3em!important;
 }
 
+/* CV date/location floats */
+.cv-meta {
+  float: right;
+}
+@media screen and (max-width: 736px) {
+  .cv-meta {
+    float: none;
+    display: block;
+  }
+}
+
+/* V-card action buttons */
+.vcard-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 736px) {
+  .vcard-actions {
+    justify-content: center;
+  }
+}
+
+/* Blog card images on index page */
+.blog-card-image {
+  height: 62%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.blog-card-image img {
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 480px) {
+  .blog-card-image {
+    height: auto;
+    display: block;
+  }
+  .blog-card-image img {
+    height: auto;
+  }
+}
+
 /* Blog header layout */
 .blog-header {
   display: flex;
