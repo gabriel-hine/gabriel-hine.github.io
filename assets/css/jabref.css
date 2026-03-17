@@ -48,6 +48,11 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	#qs_table td:nth-child(5) {
 		display: none;
 	}
+	/* Hide Year (4th) column in patents table on mobile */
+	#patents_table th:nth-child(4),
+	#patents_table td:nth-child(4) {
+		display: none;
+	}
 }
 
 @media print {
