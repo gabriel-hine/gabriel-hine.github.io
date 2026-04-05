@@ -20,7 +20,26 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/academicons.min.css"/>
-		<link rel="stylesheet" href="assets/css/main.css" />	
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* CV: show large logo on desktop, inline logo on mobile */
+			.cv-logo-col img {
+				max-width: 64px;
+				margin: 0 auto;
+				display: block;
+			}
+			.cv-inline-logo {
+				display: none;
+				height: 1.4em;
+				vertical-align: middle;
+				margin-right: 0.35em;
+			}
+			@media screen and (max-width: 736px) {
+				.cv-logo-col { display: none !important; }
+				.cv-content-col { flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; }
+				.cv-inline-logo { display: inline; }
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
