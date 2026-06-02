@@ -9,7 +9,7 @@ function saveContact() {
     "ORG:Smart Eye",
     "EMAIL;TYPE=WORK,INTERNET:gabriel.hine@smarteye.ai",
     "EMAIL;TYPE=HOME,INTERNET:direct@gabrielhine.io",
-    "URL:https://gabriel-hine.github.io/",
+    "URL:https://gabrielhine.io/",
     "URL;TYPE=LinkedIn:https://www.linkedin.com/in/gabriel-emile-hine/",
     "END:VCARD"
   ].join("\r\n");
