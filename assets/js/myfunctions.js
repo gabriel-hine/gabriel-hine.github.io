@@ -24,3 +24,11 @@ function saveContact() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+
+function toggleQR(show) {
+  document.getElementById("qr-overlay").style.display = show ? "flex" : "none";
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") toggleQR(false);
+});

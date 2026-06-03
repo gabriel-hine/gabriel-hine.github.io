@@ -95,7 +95,16 @@
 								<ul class="actions vcard-actions">
 										<li><a href="https://gabriel-hine.github.io/" class="button primary icon solid fa-home">Personal Web-site</a></li>
 										<li><a onclick="saveContact()" class="button primary icon solid fa-address-card">Save Contact</a></li>
+										<li><a onclick="toggleQR(true)" class="button primary icon solid fa-qrcode">QR Code</a></li>
 								</ul>
+
+								<!-- QR overlay -->
+								<div id="qr-overlay" onclick="toggleQR(false)" style="display: none; position: fixed; inset: 0; z-index: 10001; background: rgba(0, 0, 0, 0.65); align-items: center; justify-content: center; cursor: pointer;">
+									<div style="background: #ffffff; padding: 1.5em; border-radius: 0.5em; text-align: center;">
+										<img src="images/v-card-qr.png" alt="QR code for gabrielhine.io/v-card.html" style="display: block; width: 280px; max-width: 70vw; height: auto;" />
+										<p style="margin: 0.75em 0 0; color: #3d4449; font-size: 0.8em;">gabrielhine.io/v-card</p>
+									</div>
+								</div>
 						</div>
 					</div>
 
