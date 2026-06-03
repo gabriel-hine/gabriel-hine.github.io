@@ -20,7 +20,21 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/academicons.min.css"/>
-		<link rel="stylesheet" href="assets/css/main.css" />		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			@media screen and (max-width: 736px) {
+				.vcard-actions {
+					flex-wrap: wrap;
+					row-gap: 1em;
+				}
+				.vcard-actions li:last-child {
+					width: 100%;
+				}
+				.vcard-actions li:last-child .button {
+					width: 100%;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
